@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta de San Valentín</title>
+  <style>
+    /* Estilos generales */
+    body {
+      background: #ffccd5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .button-container {
+      margin-top: 30px;
+    }
+    button {
+      background: #e60073;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #cc0052;
+    }
+    /* Estilos de la carta */
+    .card {
+      width: 300px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .closed-card {
+      font-size: 50px;
+      color: #e60073;
+      animation: swing 1s infinite;
+    }
+    @keyframes swing {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+    }
+    .open-card .heart {
+      color: red;
+      font-size: 50px;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    .open-card h1 {
+      font-size: 24px;
+      color: #e60073;
+      margin: 10px 0;
+    }
+    .open-card p {
+      font-size: 16px;
+      color: #333;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button id="openBtn">Abrir Carta</button>
+    <button id="closeBtn">Cerrar Carta</button>
+  </div>
+  
+  <!-- Carta cerrada visible al inicio -->
+  <div id="closedCard" class="card">
+    <div class="closed-card">✉️</div>
+    <p>Carta Cerrada</p>
+  </div>
+  
+  <!-- Carta abierta inicialmente oculta -->
+  <div id="openCard" class="card" style="display: none;">
+    <div class="open-card">
+      <div class="heart">❤️</div>
+      <h1>Feliz San Valentín</h1>
+      <p>Eres el amor de mi vida, cada día me haces sonreír.lslslllllllllllllllll
+        skskskskskskskks
+      </p>
+    </div>
+  </div>
+  
+  <script>
+    const openBtn = document.getElementById('openBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const closedCard = document.getElementById('closedCard');
+    const openCard = document.getElementById('openCard');
+    
+    openBtn.addEventListener('click', function() {
+      closedCard.style.display = 'none';
+      openCard.style.display = 'block';
+    });
+    
+    closeBtn.addEventListener('click', function() {
+      openCard.style.display = 'none';
+      closedCard.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
